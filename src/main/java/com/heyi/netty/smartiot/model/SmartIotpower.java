@@ -7,7 +7,7 @@ import com.sun.org.apache.bcel.internal.classfile.Code;
  * 自定义协议
  *
  * @author Administrator
- * @see https://www.cnblogs.com/sidesky/p/6913109.html
+ * @see //www.cnblogs.com/sidesky/p/6913109.html
  */
 public class SmartIotpower {
 
@@ -85,50 +85,62 @@ public class SmartIotpower {
     /**
      * 数据标识1
      */
-    private short dataIdentification;
+    private int dataIdentification;
 
     ;
     /**
      * 2个寄存器信息八个字节A相电压
      */
-    private long Ua;
+    private float Ua;
     /**
      * 2个寄存器信息八个字节B相电压
      */
-    private long Ub;
+    private float Ub;
     /**
      * 2个寄存器信息八个字节C相电压
      */
-    private long Uc;
+    private float Uc;
     /**
      * 数据标识2两个字节
      */
-    private short dataIdentification2;
+    private int dataIdentification2;
     /**
      * 寄存器个数2
      */
     private byte registersCount2;
 
     /**
+     * AB线电压
+     */
+    private float Uab;
+    /**
+     * BC线电压
+     */
+    private float Ubc;
+    /**
+     * CA线电压
+     */
+    private float Uca;
+    /**
      * 2个寄存器信息八个字节A相电流
      */
-    private long Ia;
+    private float Ia;
     /**
      * 2个寄存器信息八个字节B相电流
      */
-    private long Ib;
+    private float Ib;
     /**
      * 2个寄存器信息八个字节C相电流
      */
-    private long Ic;
+    private float Ic;
     /**
      * 2个寄存器信息八个字节零序电流
      */
-    private long I0;
+    private float I0;
     /**
      * 数据标识3两个字节
      */
-    private short dataIdentification3;
+    private int dataIdentification3;
     /**
      * 寄存器个数3
      */
@@ -136,53 +148,53 @@ public class SmartIotpower {
     /**
      * 有功总功率
      */
-    private long PT;
+    private float PT;
     /**
      * A相有功功率
      */
-    private long PA;
+    private float PA;
     /**
      * B相有功功率
      */
-    private long PB;
+    private float PB;
     /**
      * C相有功功率
      */
-    private long PC;
+    private float PC;
     /**
      * 无功总功率
      */
-    private long PTn;
+    private float PTn;
     /**
      * A相无功功率
      */
-    private long PAn;
+    private float PAn;
     /**
      * B相无功功率
      */
-    private long PBn;
+    private float PBn;
     /**
      * C相无功功率
      */
-    private long PCn;
+    private float PCn;
     /**
      * 总视在功率
      */
 
-    private long PTin;
+    private float PTin;
     /**
      * A相视在功率
      */
-    private long PAin;
+    private float PAin;
     /**
      * A相视在功率
      */
-    private long PBin;
+    private float PBin;
 
     /**
      * A相视在功率
      */
-    private long PCin;
+    private float PCin;
 
 
 
@@ -190,7 +202,7 @@ public class SmartIotpower {
     /**
      * 数据标识4
      */
-    private short dataIdentification4;
+    private int dataIdentification4;
 
     /**
      * 寄存器个数4
@@ -200,65 +212,65 @@ public class SmartIotpower {
     /**
      * 总功率因数
      */
-    private long PTf;
+    private float PTf;
     /**
      * A相功率因数
      */
-    private long PAf;
+    private float PAf;
     /**
      * B相功率因数
      */
-    private long PBf;
+    private float PBf;
     /**
      * C相功率因数
      */
-    private long PCf;
+    private float PCf;
     /**
      * A相电压与电流夹角:0
      */
-    private long IV_angleA;
+    private float IV_angleA;
     /**
      * B相电压与电流夹角:0
      */
-    private long IV_angleB;
+    private float IV_angleB;
     /**
      * C相电压与电流夹角
      */
-    private long IV_angleC;
+    private float IV_angleC;
 
     /**
      * A相电压夹角
      */
 
-    private long V_angleA;
+    private float V_angleA;
     /**
      * B相电压夹角
      */
-    private long V_angleB;
+    private float V_angleB;
     /**
      * C相电压夹角
      */
-    private long V_angleC;
+    private float V_angleC;
     /**
      * A相电流夹角
      */
-    private long I_angleA;
+    private float I_angleA;
     /**
      * B相电流夹角
      */
-    private long I_angleB;
+    private float I_angleB;
     /**
      * C相电流夹角
      */
-    private long I_angleC;
+    private float I_angleC;
     /**
      * 电网频率
      */
-    private long frequency;
+    private float frequency;
     /**
      * 数据标识5
      */
-    private short dataIdentification5;
+    private int dataIdentification5;
     /**
      * 寄存器个数5
      */
@@ -266,15 +278,15 @@ public class SmartIotpower {
     /**
      * 电压不平衡率:
      */
-    private long V_rate;
+    private float V_rate;
     /**
      * 电流不平衡率:
      */
-    private long I_rate;
+    private float I_rate;
     /**
      * 数据标识6
      */
-    private short dataIdentification6;
+    private int dataIdentification6;
 
     /**
      * 寄存器个数6
@@ -285,15 +297,15 @@ public class SmartIotpower {
     /**
      * 电压变比
      */
-    private long V_ratio;
+    private float V_ratio;
     /**
      * 电流变比
      */
-    private long I_ratio;
+    private float I_ratio;
     /**
      * 数据标识7
      */
-    private short dataIdentification7;
+    private int dataIdentification7;
     /**
      * 寄存器个数7
      */
@@ -302,68 +314,68 @@ public class SmartIotpower {
     /**
      * 组合有功总电能
      */
-    private long CombinedActiveTotalEnergy;
+    private float CombinedActiveTotalEnergy;
     /**
      * 组合有功尖电能
      */
-    private long CombinedActiveTipEnergy;
+    private float CombinedActiveTipEnergy;
     /**
      * 组合有功峰电能
      */
-    private long CombinedActivePeakEnergy;
+    private float CombinedActivePeakEnergy;
 
     /**
      * 组合有功平电能
      */
-    private long CombineActivePowerLeveling;
+    private float CombineActivePowerLeveling;
 
 
     /**
      * 组合有功谷电能
      */
-    private long CombinedActiveValleyPower;
+    private float CombinedActiveValleyPower;
     /**
      * 正向有功总电能
      */
-    private long ForwardActiveTotalElectricalEnergy;
+    private float ForwardActiveTotalElectricalEnergy;
     /**
      * 正向有功尖电能
      */
-    private long PositiveActiveTipEnergy;
+    private float PositiveActiveTipEnergy;
     /**
      * 正向有功峰电能
      */
-    private long PositiveActivePeakEnergy;
+    private float PositiveActivePeakEnergy;
 
 
     /**
      * 正向有功平电能
      */
-    private long PositiveActivePowerLeveling;
+    private float PositiveActivePowerLeveling;
     /**
      *
      */
-    private long PositiveActiveValleyEnergy;
+    private float PositiveActiveValleyEnergy;
     /**
      * 反向有功总电能
      */
-    private long TotalReverseActiveEnergy;
+    private float TotalReverseActiveEnergy;
     /**
      * 反向有功尖电能:
      */
-    private long ReverseActiveTip;
+    private float ReverseActiveTip;
     /**
      * 反向有功峰电能
      */
-    private long ReverseActivePeakEnergy;
+    private float ReverseActivePeakEnergy;
     /**
      * 反向有功平电能
      */
-    private long ReverseActivePowerLeveling;
+    private float ReverseActivePowerLeveling;
     /**
      * 反向有功谷电能
      */
-    private long ReverseActiveValleyPower;
+    private float ReverseActiveValleyPower;
 
     /**
      * cs检验位一个字节
@@ -561,43 +573,43 @@ public class SmartIotpower {
         this.registersCount = registersCount;
     }
 
-    public short getDataIdentification() {
+    public int getDataIdentification() {
         return dataIdentification;
     }
 
-    public void setDataIdentification(short dataIdentification) {
+    public void setDataIdentification(int dataIdentification) {
         this.dataIdentification = dataIdentification;
     }
 
-    public long getUa() {
+    public float getUa() {
         return Ua;
     }
 
-    public void setUa(long ua) {
+    public void setUa(float ua) {
         Ua = ua;
     }
 
-    public long getUb() {
+    public float getUb() {
         return Ub;
     }
 
-    public void setUb(long ub) {
+    public void setUb(float ub) {
         Ub = ub;
     }
 
-    public long getUc() {
+    public float getUc() {
         return Uc;
     }
 
-    public void setUc(long uc) {
+    public void setUc(float uc) {
         Uc = uc;
     }
 
-    public short getDataIdentification2() {
+    public int getDataIdentification2() {
         return dataIdentification2;
     }
 
-    public void setDataIdentification2(short dataIdentification2) {
+    public void setDataIdentification2(int dataIdentification2) {
         this.dataIdentification2 = dataIdentification2;
     }
 
@@ -609,43 +621,43 @@ public class SmartIotpower {
         this.registersCount2 = registersCount2;
     }
 
-    public long getIa() {
+    public float getIa() {
         return Ia;
     }
 
-    public void setIa(long ia) {
+    public void setIa(float ia) {
         Ia = ia;
     }
 
-    public long getIb() {
+    public float getIb() {
         return Ib;
     }
 
-    public void setIb(long ib) {
+    public void setIb(float ib) {
         Ib = ib;
     }
 
-    public long getIc() {
+    public float getIc() {
         return Ic;
     }
 
-    public void setIc(long ic) {
+    public void setIc(float ic) {
         Ic = ic;
     }
 
-    public long getI0() {
+    public float getI0() {
         return I0;
     }
 
-    public void setI0(long i0) {
+    public void setI0(float i0) {
         I0 = i0;
     }
 
-    public short getDataIdentification3() {
+    public int getDataIdentification3() {
         return dataIdentification3;
     }
 
-    public void setDataIdentification3(short dataIdentification3) {
+    public void setDataIdentification3(int dataIdentification3) {
         this.dataIdentification3 = dataIdentification3;
     }
 
@@ -657,99 +669,99 @@ public class SmartIotpower {
         this.registersCount3 = registersCount3;
     }
 
-    public long getPT() {
+    public float getPT() {
         return PT;
     }
 
-    public void setPT(long PT) {
+    public void setPT(float PT) {
         this.PT = PT;
     }
 
-    public long getPA() {
+    public float getPA() {
         return PA;
     }
 
-    public void setPA(long PA) {
+    public void setPA(float PA) {
         this.PA = PA;
     }
 
-    public long getPB() {
+    public float getPB() {
         return PB;
     }
 
-    public void setPB(long PB) {
+    public void setPB(float PB) {
         this.PB = PB;
     }
 
-    public long getPC() {
+    public float getPC() {
         return PC;
     }
 
-    public void setPC(long PC) {
+    public void setPC(float PC) {
         this.PC = PC;
     }
 
-    public long getPTn() {
+    public float getPTn() {
         return PTn;
     }
 
-    public void setPTn(long PTn) {
+    public void setPTn(float PTn) {
         this.PTn = PTn;
     }
 
-    public long getPAn() {
+    public float getPAn() {
         return PAn;
     }
 
-    public void setPAn(long PAn) {
+    public void setPAn(float PAn) {
         this.PAn = PAn;
     }
 
-    public long getPBn() {
+    public float getPBn() {
         return PBn;
     }
 
-    public void setPBn(long PBn) {
+    public void setPBn(float PBn) {
         this.PBn = PBn;
     }
 
-    public long getPCn() {
+    public float getPCn() {
         return PCn;
     }
 
-    public void setPCn(long PCn) {
+    public void setPCn(float PCn) {
         this.PCn = PCn;
     }
 
-    public long getPTin() {
+    public float getPTin() {
         return PTin;
     }
 
-    public void setPTin(long PTin) {
+    public void setPTin(float PTin) {
         this.PTin = PTin;
     }
 
-    public long getPAin() {
+    public float getPAin() {
         return PAin;
     }
 
-    public void setPAin(long PAin) {
+    public void setPAin(float PAin) {
         this.PAin = PAin;
     }
 
-    public long getPBin() {
+    public float getPBin() {
         return PBin;
     }
 
-    public void setPBin(long PBin) {
+    public void setPBin(float PBin) {
         this.PBin = PBin;
     }
 
-    public long getPCin() {
+    public float getPCin() {
         return PCin;
     }
 
-    public void setPCin(long PCin) {
+    public void setPCin(float PCin) {
         this.PCin = PCin;
     }
 
@@ -761,11 +773,11 @@ public class SmartIotpower {
         this.cs = cs;
     }
 
-    public short getDataIdentification4() {
+    public int getDataIdentification4() {
         return dataIdentification4;
     }
 
-    public void setDataIdentification4(short dataIdentification4) {
+    public void setDataIdentification4(int dataIdentification4) {
         this.dataIdentification4 = dataIdentification4;
     }
 
@@ -777,123 +789,123 @@ public class SmartIotpower {
         this.registersCount4 = registersCount4;
     }
 
-    public long getPTf() {
+    public float getPTf() {
         return PTf;
     }
 
-    public void setPTf(long PTf) {
+    public void setPTf(float PTf) {
         this.PTf = PTf;
     }
 
-    public long getPAf() {
+    public float getPAf() {
         return PAf;
     }
 
-    public void setPAf(long PAf) {
+    public void setPAf(float PAf) {
         this.PAf = PAf;
     }
 
-    public long getPBf() {
+    public float getPBf() {
         return PBf;
     }
 
-    public void setPBf(long PBf) {
+    public void setPBf(float PBf) {
         this.PBf = PBf;
     }
 
-    public long getPCf() {
+    public float getPCf() {
         return PCf;
     }
 
-    public void setPCf(long PCf) {
+    public void setPCf(float PCf) {
         this.PCf = PCf;
     }
 
-    public long getIV_angleA() {
+    public float getIV_angleA() {
         return IV_angleA;
     }
 
-    public void setIV_angleA(long IV_angleA) {
+    public void setIV_angleA(float IV_angleA) {
         this.IV_angleA = IV_angleA;
     }
 
-    public long getIV_angleB() {
+    public float getIV_angleB() {
         return IV_angleB;
     }
 
-    public void setIV_angleB(long IV_angleB) {
+    public void setIV_angleB(float IV_angleB) {
         this.IV_angleB = IV_angleB;
     }
 
-    public long getIV_angleC() {
+    public float getIV_angleC() {
         return IV_angleC;
     }
 
-    public void setIV_angleC(long IV_angleC) {
+    public void setIV_angleC(float IV_angleC) {
         this.IV_angleC = IV_angleC;
     }
 
-    public long getV_angleA() {
+    public float getV_angleA() {
         return V_angleA;
     }
 
-    public void setV_angleA(long v_angleA) {
+    public void setV_angleA(float v_angleA) {
         V_angleA = v_angleA;
     }
 
-    public long getV_angleB() {
+    public float getV_angleB() {
         return V_angleB;
     }
 
-    public void setV_angleB(long v_angleB) {
+    public void setV_angleB(float v_angleB) {
         V_angleB = v_angleB;
     }
 
-    public long getV_angleC() {
+    public float getV_angleC() {
         return V_angleC;
     }
 
-    public void setV_angleC(long v_angleC) {
+    public void setV_angleC(float v_angleC) {
         V_angleC = v_angleC;
     }
 
-    public long getI_angleA() {
+    public float getI_angleA() {
         return I_angleA;
     }
 
-    public void setI_angleA(long i_angleA) {
+    public void setI_angleA(float i_angleA) {
         I_angleA = i_angleA;
     }
 
-    public long getI_angleB() {
+    public float getI_angleB() {
         return I_angleB;
     }
 
-    public void setI_angleB(long i_angleB) {
+    public void setI_angleB(float i_angleB) {
         I_angleB = i_angleB;
     }
 
-    public long getI_angleC() {
+    public float getI_angleC() {
         return I_angleC;
     }
 
-    public void setI_angleC(long i_angleC) {
+    public void setI_angleC(float i_angleC) {
         I_angleC = i_angleC;
     }
 
-    public long getFrequency() {
+    public float getFrequency() {
         return frequency;
     }
 
-    public void setFrequency(long frequency) {
+    public void setFrequency(float frequency) {
         this.frequency = frequency;
     }
 
-    public short getDataIdentification5() {
+    public int getDataIdentification5() {
         return dataIdentification5;
     }
 
-    public void setDataIdentification5(short dataIdentification5) {
+    public void setDataIdentification5(int dataIdentification5) {
         this.dataIdentification5 = dataIdentification5;
     }
 
@@ -905,27 +917,27 @@ public class SmartIotpower {
         this.registersCount5 = registersCount5;
     }
 
-    public long getV_rate() {
+    public float getV_rate() {
         return V_rate;
     }
 
-    public void setV_rate(long v_rate) {
+    public void setV_rate(float v_rate) {
         V_rate = v_rate;
     }
 
-    public long getI_rate() {
+    public float getI_rate() {
         return I_rate;
     }
 
-    public void setI_rate(long i_rate) {
+    public void setI_rate(float i_rate) {
         I_rate = i_rate;
     }
 
-    public short getDataIdentification6() {
+    public int getDataIdentification6() {
         return dataIdentification6;
     }
 
-    public void setDataIdentification6(short dataIdentification6) {
+    public void setDataIdentification6(int dataIdentification6) {
         this.dataIdentification6 = dataIdentification6;
     }
 
@@ -937,27 +949,27 @@ public class SmartIotpower {
         this.registersCount6 = registersCount6;
     }
 
-    public long getV_ratio() {
+    public float getV_ratio() {
         return V_ratio;
     }
 
-    public void setV_ratio(long v_ratio) {
+    public void setV_ratio(float v_ratio) {
         V_ratio = v_ratio;
     }
 
-    public long getI_ratio() {
+    public float getI_ratio() {
         return I_ratio;
     }
 
-    public void setI_ratio(long i_ratio) {
+    public void setI_ratio(float i_ratio) {
         I_ratio = i_ratio;
     }
 
-    public short getDataIdentification7() {
+    public int getDataIdentification7() {
         return dataIdentification7;
     }
 
-    public void setDataIdentification7(short dataIdentification7) {
+    public void setDataIdentification7(int dataIdentification7) {
         this.dataIdentification7 = dataIdentification7;
     }
 
@@ -969,123 +981,123 @@ public class SmartIotpower {
         this.registersCount7 = registersCount7;
     }
 
-    public long getCombinedActiveTotalEnergy() {
+    public float getCombinedActiveTotalEnergy() {
         return CombinedActiveTotalEnergy;
     }
 
-    public void setCombinedActiveTotalEnergy(long combinedActiveTotalEnergy) {
+    public void setCombinedActiveTotalEnergy(float combinedActiveTotalEnergy) {
         CombinedActiveTotalEnergy = combinedActiveTotalEnergy;
     }
 
-    public long getCombinedActiveTipEnergy() {
+    public float getCombinedActiveTipEnergy() {
         return CombinedActiveTipEnergy;
     }
 
-    public void setCombinedActiveTipEnergy(long combinedActiveTipEnergy) {
+    public void setCombinedActiveTipEnergy(float combinedActiveTipEnergy) {
         CombinedActiveTipEnergy = combinedActiveTipEnergy;
     }
 
-    public long getCombinedActivePeakEnergy() {
+    public float getCombinedActivePeakEnergy() {
         return CombinedActivePeakEnergy;
     }
 
-    public void setCombinedActivePeakEnergy(long combinedActivePeakEnergy) {
+    public void setCombinedActivePeakEnergy(float combinedActivePeakEnergy) {
         CombinedActivePeakEnergy = combinedActivePeakEnergy;
     }
 
-    public long getCombineActivePowerLeveling() {
+    public float getCombineActivePowerLeveling() {
         return CombineActivePowerLeveling;
     }
 
-    public void setCombineActivePowerLeveling(long combineActivePowerLeveling) {
+    public void setCombineActivePowerLeveling(float combineActivePowerLeveling) {
         CombineActivePowerLeveling = combineActivePowerLeveling;
     }
 
-    public long getCombinedActiveValleyPower() {
+    public float getCombinedActiveValleyPower() {
         return CombinedActiveValleyPower;
     }
 
-    public void setCombinedActiveValleyPower(long combinedActiveValleyPower) {
+    public void setCombinedActiveValleyPower(float combinedActiveValleyPower) {
         CombinedActiveValleyPower = combinedActiveValleyPower;
     }
 
-    public long getForwardActiveTotalElectricalEnergy() {
+    public float getForwardActiveTotalElectricalEnergy() {
         return ForwardActiveTotalElectricalEnergy;
     }
 
-    public void setForwardActiveTotalElectricalEnergy(long forwardActiveTotalElectricalEnergy) {
+    public void setForwardActiveTotalElectricalEnergy(float forwardActiveTotalElectricalEnergy) {
         ForwardActiveTotalElectricalEnergy = forwardActiveTotalElectricalEnergy;
     }
 
-    public long getPositiveActiveTipEnergy() {
+    public float getPositiveActiveTipEnergy() {
         return PositiveActiveTipEnergy;
     }
 
-    public void setPositiveActiveTipEnergy(long positiveActiveTipEnergy) {
+    public void setPositiveActiveTipEnergy(float positiveActiveTipEnergy) {
         PositiveActiveTipEnergy = positiveActiveTipEnergy;
     }
 
-    public long getPositiveActivePeakEnergy() {
+    public float getPositiveActivePeakEnergy() {
         return PositiveActivePeakEnergy;
     }
 
-    public void setPositiveActivePeakEnergy(long positiveActivePeakEnergy) {
+    public void setPositiveActivePeakEnergy(float positiveActivePeakEnergy) {
         PositiveActivePeakEnergy = positiveActivePeakEnergy;
     }
 
-    public long getPositiveActivePowerLeveling() {
+    public float getPositiveActivePowerLeveling() {
         return PositiveActivePowerLeveling;
     }
 
-    public void setPositiveActivePowerLeveling(long positiveActivePowerLeveling) {
+    public void setPositiveActivePowerLeveling(float positiveActivePowerLeveling) {
         PositiveActivePowerLeveling = positiveActivePowerLeveling;
     }
 
-    public long getPositiveActiveValleyEnergy() {
+    public float getPositiveActiveValleyEnergy() {
         return PositiveActiveValleyEnergy;
     }
 
-    public void setPositiveActiveValleyEnergy(long positiveActiveValleyEnergy) {
+    public void setPositiveActiveValleyEnergy(float positiveActiveValleyEnergy) {
         PositiveActiveValleyEnergy = positiveActiveValleyEnergy;
     }
 
-    public long getTotalReverseActiveEnergy() {
+    public float getTotalReverseActiveEnergy() {
         return TotalReverseActiveEnergy;
     }
 
-    public void setTotalReverseActiveEnergy(long totalReverseActiveEnergy) {
+    public void setTotalReverseActiveEnergy(float totalReverseActiveEnergy) {
         TotalReverseActiveEnergy = totalReverseActiveEnergy;
     }
 
-    public long getReverseActiveTip() {
+    public float getReverseActiveTip() {
         return ReverseActiveTip;
     }
 
-    public void setReverseActiveTip(long reverseActiveTip) {
+    public void setReverseActiveTip(float reverseActiveTip) {
         ReverseActiveTip = reverseActiveTip;
     }
 
-    public long getReverseActivePeakEnergy() {
+    public float getReverseActivePeakEnergy() {
         return ReverseActivePeakEnergy;
     }
 
-    public void setReverseActivePeakEnergy(long reverseActivePeakEnergy) {
+    public void setReverseActivePeakEnergy(float reverseActivePeakEnergy) {
         ReverseActivePeakEnergy = reverseActivePeakEnergy;
     }
 
-    public long getReverseActivePowerLeveling() {
+    public float getReverseActivePowerLeveling() {
         return ReverseActivePowerLeveling;
     }
 
-    public void setReverseActivePowerLeveling(long reverseActivePowerLeveling) {
+    public void setReverseActivePowerLeveling(float reverseActivePowerLeveling) {
         ReverseActivePowerLeveling = reverseActivePowerLeveling;
     }
 
-    public long getReverseActiveValleyPower() {
+    public float getReverseActiveValleyPower() {
         return ReverseActiveValleyPower;
     }
 
-    public void setReverseActiveValleyPower(long reverseActiveValleyPower) {
+    public void setReverseActiveValleyPower(float reverseActiveValleyPower) {
         ReverseActiveValleyPower = reverseActiveValleyPower;
     }
 
@@ -1095,5 +1107,29 @@ public class SmartIotpower {
 
     public static void setEND(byte END) {
         SmartIotpower.END = END;
+    }
+
+    public float getUab() {
+        return Uab;
+    }
+
+    public void setUab(float uab) {
+        Uab = uab;
+    }
+
+    public float getUbc() {
+        return Ubc;
+    }
+
+    public void setUbc(float ubc) {
+        Ubc = ubc;
+    }
+
+    public float getUca() {
+        return Uca;
+    }
+
+    public void setUca(float uca) {
+        Uca = uca;
     }
 }
