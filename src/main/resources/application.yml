@@ -1,0 +1,36 @@
+server:
+  port: 8088 # 服务绑定的端口，不写默认是8080
+##  servlet:
+##    context-path: /demo # 服务的路径，不写默认为空
+#spring:
+#  datasource:
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#    url: jdbc:mysql://192.168.101.253:3306/power?useUnicode=true&characterEncoding=utf-8&serverTimezone=UTC
+#    username: root
+#    password: root
+#  resources:
+#    static-locations: classpath:/templates/
+##tcp:
+##  #TCP端口，确认有无占用，如果有占用请修改TCPServer类
+##  port: 6000
+##  buffersize: 2048
+## 打印sql
+#logging:
+#  level:
+#    com.hydl.power.mapper : debug
+#
+##mybatis-plus:
+##  mapper-locations: com/hydl/power/mapper/xml/*Mapper.xml
+##  typeAliasesPackage: com.hydl.power.pojo
+#  configuration:
+#    map-underscore-to-camel-case: true
+#    cache-enabled: false
+#mybatis:
+#  mapper-locations: com/hydl/power/mapper/xml/*Mapper.xml
+#  type-aliases-package: com.hydl.power.pojo
+#pagehelper:
+#  params: pageNum=pageNumKey;pageSize=pageSizeKey;count=countSql
+#  helperDialect: mysql
+#  reasonable: false
+#  supportMethodsArguments: true
+#  page-size-zero: true
