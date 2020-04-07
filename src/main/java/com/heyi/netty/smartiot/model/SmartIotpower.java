@@ -212,19 +212,19 @@ public class SmartIotpower {
     /**
      * 总功率因数
      */
-    private float PTf;
+    private short PTf;
     /**
      * A相功率因数
      */
-    private float PAf;
+    private short PAf;
     /**
      * B相功率因数
      */
-    private float PBf;
+    private short PBf;
     /**
      * C相功率因数
      */
-    private float PCf;
+    private short PCf;
     /**
      * A相电压与电流夹角:0
      */
@@ -793,7 +793,7 @@ public class SmartIotpower {
         return PTf;
     }
 
-    public void setPTf(float PTf) {
+    public void setPTf(short PTf) {
         this.PTf = PTf;
     }
 
@@ -801,23 +801,23 @@ public class SmartIotpower {
         return PAf;
     }
 
-    public void setPAf(float PAf) {
+    public void setPAf(short PAf) {
         this.PAf = PAf;
     }
 
-    public float getPBf() {
+    public short getPBf() {
         return PBf;
     }
 
-    public void setPBf(float PBf) {
+    public void setPBf(short PBf) {
         this.PBf = PBf;
     }
 
-    public float getPCf() {
+    public short getPCf() {
         return PCf;
     }
 
-    public void setPCf(float PCf) {
+    public void setPCf(short PCf) {
         this.PCf = PCf;
     }
 
