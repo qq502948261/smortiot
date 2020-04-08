@@ -138,10 +138,10 @@ public class SmartIotDecoder extends ByteToMessageDecoder {
             System.out.println("Ic = " + Ic);
             float I0 = buffer.readFloat();
             System.out.println("I0 = " + I0);
-            int dataIdentification7 = buffer.readUnsignedShort();
-            System.out.println("dataIdentification7 = " + dataIdentification7);
-            byte registersCount7 = buffer.readByte();
-            System.out.println("registersCount = " + registersCount);
+            int dataIdentification4 = buffer.readUnsignedShort();
+            System.out.println("dataIdentification4 = " + dataIdentification4);
+            byte registersCount4 = buffer.readByte();
+            System.out.println("registersCount4 = " + registersCount4);
 
             float PT = buffer.readFloat();
             System.out.println("PT = " + PT);
@@ -167,10 +167,10 @@ public class SmartIotDecoder extends ByteToMessageDecoder {
             System.out.println("PBin = " + PBin);
             float PCin = buffer.readFloat();
             System.out.println("PCin = " + PCin);
-            int dataIdentification4 = buffer.readUnsignedShort();
-            System.out.println("dataIdentification4 = " + dataIdentification4);
-            byte registersCount4 = buffer.readByte();
-            System.out.println("registersCount4 = " + registersCount4);
+            int dataIdentification5 = buffer.readUnsignedShort();
+            System.out.println("dataIdentification5 = " + dataIdentification5);
+            byte registersCount5 = buffer.readByte();
+            System.out.println("registersCount5 = " + registersCount5);
             short PTf = buffer.readShort();
             System.out.println("PTf = " + PTf);
             short PAf = buffer.readShort();
@@ -186,6 +186,8 @@ public class SmartIotDecoder extends ByteToMessageDecoder {
             short IV_angleC = buffer.readShort();
             System.out.println("IV_angleC = " + IV_angleC);
             short V_angleB = buffer.readShort();
+            short V_angleA = buffer.readShort();
+            System.out.println("V_angleA = " + V_angleA);
             System.out.println("V_angleB = " + V_angleB);
             short V_angleC = buffer.readShort();
             System.out.println("V_angleC = " + V_angleC);
@@ -197,81 +199,61 @@ public class SmartIotDecoder extends ByteToMessageDecoder {
             System.out.println("I_angleC = " + I_angleC);
             short frequency = buffer.readShort();
             System.out.println("frequency = " + frequency);
-            int dataIdentification5 = buffer.readUnsignedShort();
-            byte registersCount5 = buffer.readByte();
-
-            System.out.println("继续" + buffer.readByte());
-            System.out.println("继续" + buffer.readByte());
-            System.out.println("继续" + buffer.readByte());
-            System.out.println("继续" + buffer.readByte());
-            System.out.println("继续" + buffer.readByte());
-            System.out.println("继续" + buffer.readByte());
+            int dataIdentification6 = buffer.readUnsignedShort();
+            System.out.println("dataIdentification6 = " + dataIdentification6);
+            byte registersCount6 = buffer.readByte();
+            System.out.println("registersCount6 = " + registersCount6);
+            short V_rate = buffer.readShort();
+            System.out.println("V_rate = " + V_rate);
+            short I_rate = buffer.readShort();
+            System.out.println("I_rate = " + I_rate);
+            int dataIdentification7 = buffer.readUnsignedShort();
+            System.out.println("dataIdentification7 = " + dataIdentification7);
+            byte registersCount7 = buffer.readByte();
+            System.out.println("registersCount7 = " + registersCount7);
+            short V_ratio = buffer.readShort();
+            System.out.println("V_ratio = " + V_ratio);
+            short I_ratio = buffer.readShort();
+            System.out.println("I_ratio = " + I_ratio);
+             // 有两个寄存器位为空
+            buffer.readShort();
+            buffer.readShort();
+            int dataIdentification8 = buffer.readUnsignedShort();
+            System.out.println("dataIdentification8 = " + dataIdentification8);
+            short registersCount8 = buffer.readByte();
+            System.out.println("registersCount8 = " + registersCount8);
+            float CombinedActiveTotalEnergy = buffer.readFloat();
+            System.out.println("CombinedActiveTotalEnergy = " + CombinedActiveTotalEnergy);
+            float CombinedActiveTipEnergy = buffer.readFloat();
+            System.out.println("CombinedActiveTipEnergy = " + CombinedActiveTipEnergy);
+            float CombinedActivePeakEnergy = buffer.readFloat();
+            System.out.println("CombinedActivePeakEnergy = " + CombinedActivePeakEnergy);
+            float CombineActivePowerLeveling = buffer.readFloat();
+            System.out.println("CombineActivePowerLeveling = " + CombineActivePowerLeveling);
+            float CombinedActiveValleyPower = buffer.readFloat();
+            System.out.println("CombinedActiveValleyPower = " + CombinedActiveValleyPower);
+            float ForwardActiveTotalElectricalEnergy = buffer.readFloat();
+            System.out.println("ForwardActiveTotalElectricalEnergy = " + ForwardActiveTotalElectricalEnergy);
+            float PositiveActiveTipEnergy = buffer.readFloat();
+            System.out.println("PositiveActiveTipEnergy = " + PositiveActiveTipEnergy);
+            float PositiveActivePeakEnergy = buffer.readFloat();
+            System.out.println("PositiveActivePeakEnergy = " + PositiveActivePeakEnergy);
+            float PositiveActivePowerLeveling = buffer.readFloat();
+            System.out.println("PositiveActivePowerLeveling = " + PositiveActivePowerLeveling);
+            float PositiveActiveValleyEnergy = buffer.readFloat();
+            System.out.println("PositiveActiveValleyEnergy = " + PositiveActiveValleyEnergy);
+            float TotalReverseActiveEnergy = buffer.readFloat();
+            System.out.println("TotalReverseActiveEnergy = " + TotalReverseActiveEnergy);
+            float ReverseActiveTip = buffer.readFloat();
+            System.out.println("ReverseActiveTip = " + ReverseActiveTip);
+            float ReverseActivePeakEnergy = buffer.readFloat();
+            System.out.println("ReverseActivePeakEnergy = " + ReverseActivePeakEnergy);
+            float ReverseActivePowerLeveling = buffer.readFloat();
+            System.out.println("ReverseActivePowerLeveling = " + ReverseActivePowerLeveling);
+            float ReverseActiveValleyPower = buffer.readFloat();
+            System.out.println("ReverseActiveValleyPower = " + ReverseActiveValleyPower);
             byte cs = buffer.readByte();
             System.out.println("cs....." + cs);
-//            float V_rate = buffer.readFloat();
-//            System.out.println(buffer.readerIndex());
-//            float I_rate = buffer.readFloat();
-//            short dataIdentification6 = buffer.readShort();
-//            byte registersCount6 = buffer.readByte();
-//            float V_ratio = buffer.readFloat();
-//            float I_ratio = buffer.readFloat();
-//            short dataIdentification7 = buffer.readShort();
-//            byte registersCount7 = buffer.readByte();
-//            float CombinedActiveTotalEnergy = buffer.readFloat();
-//            float CombinedActiveTipEnergy = buffer.readFloat();
-//            float CombinedActivePeakEnergy = buffer.readFloat();
-//            float CombineActivePowerLeveling = buffer.readFloat();
-//            float CombinedActiveValleyPower = buffer.readFloat();
-//            float ForwardActiveTotalElectricalEnergy = buffer.readFloat();
-//            float PositiveActiveTipEnergy = buffer.readFloat();
-//            float PositiveActivePeakEnergy = buffer.readFloat();
-//            float PositiveActivePowerLeveling = buffer.readFloat();
-//            float PositiveActiveValleyEnergy = buffer.readFloat();
-//            float TotalReverseActiveEnergy = buffer.readFloat();
-//            float ReverseActiveTip = buffer.readFloat();
-//            float ReverseActivePeakEnergy = buffer.readFloat();
-//            float ReverseActivePowerLeveling = buffer.readFloat();
-//            float ReverseActiveValleyPower = buffer.readFloat();
-
-
-//            short flowid = buffer.readShort();
-//            byte version_major = buffer.readByte();
-//            byte version_minor = buffer.readByte();
-//            byte second = buffer.readByte();
-//            byte minute = buffer.readByte();
-//            byte hour = buffer.readByte();
-//            byte day = buffer.readByte();
-//            byte month = buffer.readByte();
-//            byte year = buffer.readByte();
-//            byte[] src = new byte[6];
-//            src[0] = buffer.readByte();
-//            src[1] = buffer.readByte();
-//            src[2] = buffer.readByte();
-//            src[3] = buffer.readByte();
-//            src[4] = buffer.readByte();
-//            src[5] = buffer.readByte();
-//            byte[] dest = new byte[6];
-//            dest[0] = buffer.readByte();
-//            dest[1] = buffer.readByte();
-//            dest[2] = buffer.readByte();
-//            dest[3] = buffer.readByte();
-//            dest[4] = buffer.readByte();
-//            dest[5] = buffer.readByte();
-
-//            short data_len = buffer.readShort();
-//            if (buffer.readableBytes() < data_len + 4) {
-//                //还原读指针
-//                buffer.readerIndex(beginReader);
-//                return;
-//            }
-//            byte[] data = null;
-//            if (data_len > 0) {
-//                //读取应用数据单元
-//                data = new byte[data_len];
-//                buffer.readBytes(data);
-//            }
-
-//            byte checcsksum = buffer.readByte();
             short end = buffer.readByte();
             System.out.println("end......" + end);
             if (end == SmartIotpower.END) {
@@ -295,25 +277,6 @@ public class SmartIotDecoder extends ByteToMessageDecoder {
                 iot.setCs(cs);
 
 
-//                iot.setFlowid(flowid);
-//                iot.setVersion_major(version_major);
-//                iot.setVersion_minor(version_minor);
-//                iot.setSecond(second);
-//                iot.setMinute(minute);
-//                iot.setHour(hour);
-//                iot.setDay(day);
-//                iot.setMonth(month);
-//                iot.setYear(year);
-//                iot.setSrc(src);
-//                iot.setDest(dest);
-//                iot.setData_len(data_len);
-//                iot.setCmd(cmd);
-//                if (data_len > 0) {
-//                    iot.setData(data);
-//                } else {
-//                    iot.setData(null);
-//                }
-//                iot.setChecksum(checksum);
                 out.add(iot);
             } else {
                 log.info("数据结构错误");
