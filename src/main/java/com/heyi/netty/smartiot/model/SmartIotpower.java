@@ -5,8 +5,13 @@ import com.sun.org.apache.bcel.internal.classfile.Code;
 
 /**
  * 自定义协议
- *
- * @author Administrator
+ *readFloat：取4字节的int内容，转换为float类型；
+ * readUnsignedByte：取1字节的内容，将十六进制非数字转化为十进制(解决返回数字为负情况)
+ * readInt：取4字节的内容
+ * readByte：取1字节的内容
+ *readFloat：取4字节的int内容，转换为float类型
+ * eadUnsignedInt：取4字节的内容，将十六进制非数字转化为十进制(解决返回数字为负情况)
+ * @author hzz
  * @see //www.cnblogs.com/sidesky/p/6913109.html
  */
 public class SmartIotpower {
@@ -311,6 +316,16 @@ public class SmartIotpower {
      */
     private byte registersCount7;
 
+
+    /**
+     * 数据标识8
+     */
+    private float   dataIdentification8;
+    /**
+     * 寄存器个数8
+     */
+    private float  regitersCount8;
+
     /**
      * 组合有功总电能
      */
@@ -385,6 +400,22 @@ public class SmartIotpower {
      * 结束符
      */
     public static byte END = 22;
+
+    public float getDataIdentification8() {
+        return dataIdentification8;
+    }
+
+    public void setDataIdentification8(float dataIdentification8) {
+        this.dataIdentification8 = dataIdentification8;
+    }
+
+    public float getRegitersCount8() {
+        return regitersCount8;
+    }
+
+    public void setRegitersCount8(float regitersCount8) {
+        this.regitersCount8 = regitersCount8;
+    }
 
     /**
      * 打印调试信息
