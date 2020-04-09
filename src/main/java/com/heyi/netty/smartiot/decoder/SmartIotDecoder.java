@@ -2,7 +2,6 @@ package com.heyi.netty.smartiot.decoder;
 
 import java.util.List;
 
-import com.heyi.netty.smartiot.model.SmartIotProtocol;
 import com.heyi.netty.smartiot.model.SmartIotpower;
 import org.apache.commons.codec.binary.Hex;
 import org.slf4j.Logger;
@@ -48,7 +47,7 @@ public class SmartIotDecoder extends ByteToMessageDecoder {
         }
         System.out.println("目前数据缓存大小: " + buffer.readableBytes());
         // 刻度长度必须大于基本最小长度
-        if (buffer.readableBytes() >= SmartIotProtocol.MIN_LEN) {
+        if (buffer.readableBytes() >= SmartIotpower.MIN_LEN) {
             log.info("符合最小长度，进行解析");
             System.out.println("符合最小长度，进行解析");
             //防止socket字节流攻击、客户端传来的数据过大，这里需要对数据进行过滤掉

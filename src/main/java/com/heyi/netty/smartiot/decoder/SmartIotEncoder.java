@@ -1,6 +1,6 @@
 package com.heyi.netty.smartiot.decoder;
 
-import com.heyi.netty.smartiot.model.SmartIotProtocol;
+import com.heyi.netty.smartiot.model.SmartIotpower;
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.handler.codec.MessageToByteEncoder;
@@ -10,28 +10,24 @@ import io.netty.handler.codec.MessageToByteEncoder;
  * @author Administrator
  *
  */
-public class SmartIotEncoder extends MessageToByteEncoder<SmartIotProtocol> {
+public class SmartIotEncoder extends MessageToByteEncoder<SmartIotpower> {
 
     @Override
-    protected void encode(ChannelHandlerContext ctx, SmartIotProtocol msg, ByteBuf out) throws Exception {
+    protected void encode(ChannelHandlerContext ctx, SmartIotpower msg, ByteBuf out) throws Exception {
         //写入消息SmartIot具体内容
-        out.writeShort(SmartIotProtocol.START);
-        out.writeShort(msg.getFlowid());
-        out.writeByte(msg.getVersion_major());
-        out.writeByte(msg.getVersion_minor());
-        out.writeByte(msg.getSecond());
-        out.writeByte(msg.getMinute());
-        out.writeByte(msg.getHour());
-        out.writeByte(msg.getDay());
-        out.writeByte(msg.getMonth());
-        out.writeByte(msg.getYear());
-        out.writeBytes(msg.getSrc());
-        out.writeBytes(msg.getDest());
-        out.writeShort(msg.getData_len());
-        out.writeByte(msg.getCmd());
-        out.writeBytes(msg.getData());
-        out.writeByte(msg.getChecksum());
-        out.writeShort(SmartIotProtocol.END);
+//        68 AA AA AA AA AA AA 88 00 EC 16
+        out.writeByte(SmartIotpower.START);
+        out.writeByte(170);
+        out.writeByte(170);
+        out.writeByte(170);
+        out.writeByte(170);
+        out.writeByte(170);
+        out.writeByte(170);
+        out.writeByte(170);
+        out.writeByte(136);
+        out.writeByte(0);
+        out.writeByte(236);
+        out.writeByte(SmartIotpower.END);
     }
 
 }
