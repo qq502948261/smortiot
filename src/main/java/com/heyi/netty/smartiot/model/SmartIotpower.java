@@ -1163,4 +1163,22 @@ public class SmartIotpower {
     public void setUca(float uca) {
         Uca = uca;
     }
+    /**
+     * 打印调试信息
+     */
+//    public void printDebugInfo(){
+//        System.out.println("---------完整数据包开始------------");
+//        System.out.println("|开始标志: " + printHexShort(START));
+//        System.out.println("|业务流水: " + printHexShort(flowid) + "\tFlowID:" + flowid);
+//        System.out.println("|协议版本: " + printHexByte(version_major) + printHexByte(version_minor));
+//        System.out.println("|时间标签: " + "20" + year + "-" + month + "-" + day + " " + hour + ":" + minute + ":" + second);
+//        System.out.println("|源地址  : " + printHexBytes(src));
+//        System.out.println("|目的地址: " + printHexBytes(dest));
+//        System.out.println("|数据长度: " + data_len);
+//        System.out.println("|命令字节: " + printHexByte(cmd));
+//        System.out.println("|应用数据: " + printHexBytes(data));
+//        System.out.println("|校验字节: " + printHexByte(checksum));
+//        System.out.println("|结束标志: " + printHexShort(END));
+//        System.out.println("---------------------------------");
+//    }
 }
