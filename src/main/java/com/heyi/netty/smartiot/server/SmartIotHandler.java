@@ -2,7 +2,7 @@ package com.heyi.netty.smartiot.server;
 
 import java.net.InetSocketAddress;
 
-import com.heyi.netty.smartiot.model.SmartIotProtocol;
+import com.heyi.netty.smartiot.model.SmartIotpower;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -14,17 +14,17 @@ import io.netty.channel.SimpleChannelInboundHandler;
  * @author Administrator
  *
  */
-public class SmartIotHandler extends SimpleChannelInboundHandler<SmartIotProtocol> {
+public class SmartIotHandler extends SimpleChannelInboundHandler<SmartIotpower> {
 
 
     private static final Logger log = LoggerFactory.getLogger(SmartIotHandler.class);
 
     @Override
-    protected void channelRead0(ChannelHandlerContext ctx, SmartIotProtocol iot)
+    protected void channelRead0(ChannelHandlerContext ctx, SmartIotpower iot)
             throws Exception {
-
-        log.info("收到设备数据包: " + iot.getFlowid());
-        iot.printDebugInfo();
+//
+//        log.info("收到设备数据包: " + iot.getFlowid());
+//        iot.printDebugInfo();
         ctx.write("ok");
     }
     @Override
