@@ -51,6 +51,7 @@ public class SmartIotHandler extends SimpleChannelInboundHandler<SmartIotpower> 
             byteBuf.writeByte(236);
             byteBuf.writeByte(SmartIotpower.END);
             ctx.writeAndFlush(byteBuf); // (3)
+            System.out.println("发送了68 AA AA AA AA AA AA 88 00 EC 16");
             Thread.sleep(30000);
         }
     }
