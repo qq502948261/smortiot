@@ -19,7 +19,7 @@ public class SmartIotpower {
     /**
      * 协议最短长度 30 字节
      */
-    public static int MIN_LEN = 50;
+    public static int MIN_LEN = 10;
 
     /**
      * 数据包启动符号 @@
