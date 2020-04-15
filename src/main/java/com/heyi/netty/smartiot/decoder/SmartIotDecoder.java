@@ -341,12 +341,36 @@ public class SmartIotDecoder extends ByteToMessageDecoder {
             //08为登录包
             if (functionCode ==8 ){
                 System.out.println("收到登录请求======+++++++++++++++++++++++ " );
+//68 11 11 11 11 11 11 08 18 38 36 31 35 32 32 30 34 30 30 34 31 39 37 33 00 00 00 00 00 00 00 00 00 F2 16
+                //解析这个心跳包的IEMI码
+               ByteBuf IEMI= buffer.readBytes(24);
+                byte cs = buffer.readByte();
+                byte end = buffer.readByte();
+                byte dataLength =buffer.readByte();
+                LoginPackage loginPackage =new LoginPackage();
+                loginPackage.setDeviceid(deviceid);
+                loginPackage.setDeviceType(deviceType);
+                loginPackage.setVendorCode(vendorCode);
+                loginPackage.setFunctionCode(functionCode);
+                loginPackage.setDataLength(dataLength);
+                loginPackage.setIEMI(IEMI);
+                out.add(loginPackage);
 
             }
             if (functionCode ==10 ){
                 System.out.println("收到心跳包========================================");
                byte cs = buffer.readByte();
                byte end = buffer.readByte();
+               byte dataLength =buffer.readByte();
+                HeartBeat heartBeat = new HeartBeat();
+                heartBeat.setDeviceid(deviceid);
+                heartBeat.setDeviceType(deviceType);
+                heartBeat.setVendorCode(vendorCode);
+                heartBeat.setFunctionCode(functionCode);
+                heartBeat.setDataLength(dataLength);
+                heartBeat.setCs(cs);
+                heartBeat.setEnd(end);
+                out.add(heartBeat);
             }
 
             //
