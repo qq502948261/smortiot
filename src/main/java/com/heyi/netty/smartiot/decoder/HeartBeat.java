@@ -93,12 +93,11 @@ public class HeartBeat {
         this.cs = cs;
     }
 
-    public byte getEnd() {
+    public static byte getEnd() {
         return end;
     }
 
-    public void setEnd(byte end) {
-        this.end = end;
+    public static void setEnd(byte end) {
+        HeartBeat.end = end;
     }
-
 }

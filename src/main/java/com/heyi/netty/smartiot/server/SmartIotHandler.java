@@ -34,7 +34,7 @@ public class SmartIotHandler extends SimpleChannelInboundHandler<SmartIotpower> 
         System.out.println(msg.toString());
         System.out.println("2312321321321312321321321");
 
-        while (true) {
+        if(msg!= null) {
 //            ByteBuf time = ctx.alloc().buffer(4); //为ByteBuf分配四个字节
 //            time.writeInt((int) (System.currentTimeMillis() / 1000L + 2208988800L));
             ByteBuf byteBuf = ctx.alloc().buffer(11);//为bytebuf分配11个字节
@@ -52,7 +52,6 @@ public class SmartIotHandler extends SimpleChannelInboundHandler<SmartIotpower> 
             byteBuf.writeByte(SmartIotpower.END);
             ctx.writeAndFlush(byteBuf); // (3)
             System.out.println("发送了68 AA AA AA AA AA AA 88 00 EC 16");
-            Thread.sleep(30000);
         }
     }
 
