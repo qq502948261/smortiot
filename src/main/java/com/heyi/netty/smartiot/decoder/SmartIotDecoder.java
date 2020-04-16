@@ -1,8 +1,11 @@
 package com.heyi.netty.smartiot.decoder;
 
 import java.util.List;
+import java.util.concurrent.ConcurrentHashMap;
 
 import com.heyi.netty.smartiot.model.SmartIotpower;
+import io.netty.channel.Channel;
+import io.netty.channel.group.ChannelGroup;
 import org.apache.commons.codec.binary.Hex;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -19,7 +22,7 @@ import io.netty.handler.codec.ByteToMessageDecoder;
 
 public class SmartIotDecoder extends ByteToMessageDecoder {
 
-
+    private ConcurrentHashMap<String, Channel> sessionChannelMap = new ConcurrentHashMap<String, Channel>();
     private static final Logger log = LoggerFactory.getLogger(SmartIotDecoder.class);
 
     /**
@@ -354,8 +357,24 @@ public class SmartIotDecoder extends ByteToMessageDecoder {
                 loginPackage.setFunctionCode(functionCode);
                 loginPackage.setDataLength(dataLength);
                 loginPackage.setIEMI(IEMI);
-                out.add(loginPackage);
+                loginPackage.setCs(cs);
+//                out.add(loginPackage);
 
+                ByteBuf byteBuf = ctx.alloc().buffer(11);//为bytebuf分配11个字节
+                byteBuf.writeByte(SmartIotpower.START);
+                byteBuf.writeByte(170);
+                byteBuf.writeByte(170);
+                byteBuf.writeByte(170);
+                byteBuf.writeByte(170);
+                byteBuf.writeByte(170);
+                byteBuf.writeByte(170);
+                byteBuf.writeByte(170);
+                byteBuf.writeByte(136);
+                byteBuf.writeByte(0);
+                byteBuf.writeByte(236);
+                byteBuf.writeByte(SmartIotpower.END);
+                ctx.writeAndFlush(byteBuf); // (3)
+                System.out.println("发送了68 AA AA AA AA AA AA 88 00 EC 16");
             }
             if (functionCode ==10 ){
                 System.out.println("收到心跳包========================================");
@@ -369,8 +388,23 @@ public class SmartIotDecoder extends ByteToMessageDecoder {
                 heartBeat.setFunctionCode(functionCode);
                 heartBeat.setDataLength(dataLength);
                 heartBeat.setCs(cs);
-                heartBeat.setEnd(end);
-                out.add(heartBeat);
+                HeartBeat.setEnd(end);
+//                out.add(heartBeat);
+                Channel channel=ctx.channel();
+                ByteBuf byteBuf = ctx.alloc().buffer(11);//为bytebuf分配11个字节
+                byteBuf.writeByte(SmartIotpower.START);
+                byteBuf.writeByte(170);
+                byteBuf.writeByte(170);
+                byteBuf.writeByte(170);
+                byteBuf.writeByte(170);
+                byteBuf.writeByte(170);
+                byteBuf.writeByte(170);
+                byteBuf.writeByte(138);
+                byteBuf.writeByte(0);
+                byteBuf.writeByte(238);
+                byteBuf.writeByte(SmartIotpower.END);
+                channel.writeAndFlush(byteBuf); // (3)
+                System.out.println("channel发送了68 AA AA AA AA AA AA 8A 00 EE 16");
             }
 
             //

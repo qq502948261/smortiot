@@ -32,27 +32,27 @@ public class SmartIotHandler extends SimpleChannelInboundHandler<SmartIotpower> 
     public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
         ctx.fireChannelRead(msg);
         System.out.println(msg.toString());
-        System.out.println("2312321321321312321321321");
+        System.out.println("数据解析完成");
 
-        if(msg!= null) {
-//            ByteBuf time = ctx.alloc().buffer(4); //为ByteBuf分配四个字节
-//            time.writeInt((int) (System.currentTimeMillis() / 1000L + 2208988800L));
-            ByteBuf byteBuf = ctx.alloc().buffer(11);//为bytebuf分配11个字节
-            byteBuf.writeByte(SmartIotpower.START);
-            byteBuf.writeByte(170);
-            byteBuf.writeByte(170);
-            byteBuf.writeByte(170);
-            byteBuf.writeByte(170);
-            byteBuf.writeByte(170);
-            byteBuf.writeByte(170);
-            byteBuf.writeByte(170);
-            byteBuf.writeByte(136);
-            byteBuf.writeByte(0);
-            byteBuf.writeByte(236);
-            byteBuf.writeByte(SmartIotpower.END);
-            ctx.writeAndFlush(byteBuf); // (3)
-            System.out.println("发送了68 AA AA AA AA AA AA 88 00 EC 16");
-        }
+//        if(msg!= null) {
+////            ByteBuf time = ctx.alloc().buffer(4); //为ByteBuf分配四个字节
+////            time.writeInt((int) (System.currentTimeMillis() / 1000L + 2208988800L));
+//            ByteBuf byteBuf = ctx.alloc().buffer(11);//为bytebuf分配11个字节
+//            byteBuf.writeByte(SmartIotpower.START);
+//            byteBuf.writeByte(170);
+//            byteBuf.writeByte(170);
+//            byteBuf.writeByte(170);
+//            byteBuf.writeByte(170);
+//            byteBuf.writeByte(170);
+//            byteBuf.writeByte(170);
+//            byteBuf.writeByte(170);
+//            byteBuf.writeByte(136);
+//            byteBuf.writeByte(0);
+//            byteBuf.writeByte(236);
+//            byteBuf.writeByte(SmartIotpower.END);
+//            ctx.writeAndFlush(byteBuf); // (3)
+//            System.out.println("发送了68 AA AA AA AA AA AA 88 00 EC 16");
+//        }
     }
 
     @Override
